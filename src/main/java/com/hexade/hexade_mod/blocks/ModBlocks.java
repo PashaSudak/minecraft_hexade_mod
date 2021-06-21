@@ -17,10 +17,18 @@ import java.util.function.Supplier;
 public class ModBlocks
 {
     public static final RegistryObject<Block> BERYL_ORE = register("beryl_ore",() ->
-            new Block(AbstractBlock.Properties.of(Material.METAL).harvestLevel(2).strength(6F,6F).harvestTool(ToolType.PICKAXE)));
+            new Block(AbstractBlock.Properties.of(Material.METAL)
+                    .strength(6F,6F)
+                    .harvestTool(ToolType.PICKAXE)
+                    .harvestLevel(4)
+                    .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> BERYL_BLOCK = register("beryl_block",() ->
-            new Block(AbstractBlock.Properties.of(Material.METAL).harvestLevel(2).strength(6F,6F).harvestTool(ToolType.PICKAXE)));
+            new Block(AbstractBlock.Properties.of(Material.METAL)
+                    .strength(6F,6F)
+                    .harvestTool(ToolType.PICKAXE)
+                    .harvestLevel(4)
+                    .requiresCorrectToolForDrops()));
 
 
     public static void register() {}
