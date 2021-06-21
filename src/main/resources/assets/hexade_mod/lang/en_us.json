@@ -1,4 +1,6 @@
 {
   "item.hexade_mod.beryl": "Beryl",
+  "block.hexade_mod.beryl_ore": "Beryl ore",
+  "block.hexade_mod.beryl_block": "Beryl block",
   "itemGroup.mod_materials_tab": "Materials"
 }
