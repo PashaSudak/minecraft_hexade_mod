@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hexade_mod:beryl_block"
+    }
+  ],
+  "result": {
+    "item": "hexade_mod:beryl",
+    "count": 9
+  }
+}

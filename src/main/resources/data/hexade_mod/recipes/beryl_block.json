@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "hexade_mod:beryl"
+    }
+  },
+  "result": {
+    "item": "hexade_mod:beryl_block"
+  }
+}
