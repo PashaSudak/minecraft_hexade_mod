@@ -1,10 +1,13 @@
 package com.hexade.hexade_mod;
 
 import com.hexade.hexade_mod.init.Registration;
+// import com.hexade.hexade_mod.world.gen.OreGeneration;
+import com.hexade.hexade_mod.world.gen.OreGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -37,7 +40,6 @@ public class Hexademod
         eventBus.addListener(this::doClientStuff);
 
 
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -45,6 +47,8 @@ public class Hexademod
     {
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGeneration::generateOre);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)

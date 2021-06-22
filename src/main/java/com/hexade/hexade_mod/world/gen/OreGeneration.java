@@ -1,29 +1,24 @@
 package com.hexade.hexade_mod.world.gen;
 
-import com.hexade.hexade_mod.Hexademod;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.WorldGenRegistries;
+import com.hexade.hexade_mod.blocks.ModBlocks;
+import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-import java.util.ArrayList;
 
-@Mod.EventBusSubscriber
 public class OreGeneration
 {
-    private static final ArrayList<ConfiguredFeature<?, ?>> overworldOres = new ArrayList<ConfiguredFeature<?, ?>>();
-    private static final ArrayList<ConfiguredFeature<?, ?>> netherOres = new ArrayList<ConfiguredFeature<?, ?>>();
-    private static final ArrayList<ConfiguredFeature<?, ?>> endOres = new ArrayList<ConfiguredFeature<?, ?>>();
+    public static final ConfiguredFeature<?, ?> beryl_ore = Feature.ORE.configured(
+            new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, ModBlocks.BERYL_ORE.get().defaultBlockState(), 3)) //vein size
+            .range(16).squared() //maximum y level where ore can spawn
+            .count(1); //how many veins maximum per chunck
 
-    public static void registerOre()
-    {
-
+    public static void generateOre(final BiomeLoadingEvent event) {
+        BiomeGenerationSettingsBuilder generation = event.getGeneration();
+        generation.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, beryl_ore);
     }
-
-    private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature)
-    {
-        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, Hexademod.MOD_ID + ":" + name, configuredFeature);
-    }
-
 }
+
