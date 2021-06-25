@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#",
+    "X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "hexade_mod:beryl"
+    }
+  },
+  "result": {
+    "item": "hexade_mod:beryl_ingot",
+    "count": 4
+  }
+}
