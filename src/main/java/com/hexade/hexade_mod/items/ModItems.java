@@ -11,5 +11,8 @@ public class ModItems
     public static final RegistryObject<Item> BERYL = Registration.ITEMS.register("beryl", () ->
             new Item(new Item.Properties().tab(ModItemGroups.MOD_MATERIALS_TAB)));
 
+    public static final RegistryObject<Item> BERYL_INGOT =  Registration.ITEMS.register("beryl_ingot", () ->
+            new Item(new Item.Properties().tab(ModItemGroups.MOD_MATERIALS_TAB)));
+
     public static void register() { }
 }
